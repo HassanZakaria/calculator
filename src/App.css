@@ -1,0 +1,99 @@
+.app {
+  width: 50vh;
+  margin: 5vh auto;
+}
+
+.calc-btn {
+  width: 100%;
+}
+.calc-output {
+  width: 100%;
+  text-align: right;
+  background-color: black;
+  padding: 5px;
+  color: white;
+  grid-area: display;
+  font-size: 20px;
+  border-radius: 5px;
+}
+.calculator {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px 15px;
+  grid-template-areas:
+    "display display display display"
+    "clear clear delete divide"
+    "seven eight nine multiply"
+    "four five six subtract"
+    "one two three add"
+    "zero zero equal equal";
+  align-items: start;
+}
+.clear {
+  grid-area: clear;
+}
+
+.delete {
+  grid-area: delete;
+}
+
+.divide {
+  grid-area: divide;
+}
+
+.seven {
+  grid-area: seven;
+}
+
+.eight {
+  grid-area: eight;
+}
+
+.nine {
+  grid-area: nine;
+}
+
+.four {
+  grid-area: four;
+}
+
+.five {
+  grid-area: five;
+}
+
+.six {
+  grid-area: six;
+}
+
+.one {
+  grid-area: one;
+}
+
+.two {
+  grid-area: two;
+}
+
+.three {
+  grid-area: three;
+}
+
+.zero {
+  grid-area: zero;
+}
+
+.multiply {
+  grid-area: multiply;
+}
+
+.subtract {
+  grid-area: subtract;
+}
+
+.add {
+  grid-area: add;
+}
+
+.equal {
+  grid-area: equal;
+}

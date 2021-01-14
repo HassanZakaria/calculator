@@ -12,7 +12,7 @@ import Subtract from "./Components/Subtract";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <div className="calculator">
         <OutPutScreen />
         <Clear />

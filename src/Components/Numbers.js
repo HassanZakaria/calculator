@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 
 const Numbers = ({ number }) => {
   return (
-    <Button variant="primary" className="calc-btn number">
+    <Button variant="primary" className="calc-btn">
       {number}
     </Button>
   );
