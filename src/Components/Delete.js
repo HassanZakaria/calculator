@@ -6,7 +6,7 @@ const Delete = ({ setFirstNumber, firstNumber }) => {
     <Button
       variant="secondary"
       className="calc-btn delete"
-      onClick={() => setFirstNumber(firstNumber.slice(0, -1))}
+      onClick={() => setFirstNumber(firstNumber ? firstNumber.slice(0, -1) : 0)}
     >
       DEL
     </Button>

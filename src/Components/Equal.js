@@ -5,13 +5,13 @@ const Equal = ({ setFirstNumber, firstNumber, operator, secondNumber }) => {
   function chooseOperator(operator) {
     switch (operator) {
       case "+":
-        return parseInt(firstNumber) + parseInt(secondNumber);
+        return parseFloat(firstNumber) + parseFloat(secondNumber);
       case "-":
-        return parseInt(secondNumber) - parseInt(firstNumber);
+        return parseFloat(secondNumber) - parseFloat(firstNumber);
       case "*":
-        return parseInt(firstNumber) * parseInt(secondNumber);
+        return parseFloat(firstNumber) * parseFloat(secondNumber);
       case "/":
-        return parseInt(secondNumber) / parseInt(firstNumber);
+        return parseFloat(secondNumber) / parseFloat(firstNumber);
       default:
         console.error("no operator clicked!");
     }

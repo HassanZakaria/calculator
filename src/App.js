@@ -21,7 +21,6 @@ function App() {
     setOperator(operation);
     setFirstNumber(0);
   };
-
   return (
     <div className="app">
       <div className="calculator">
