@@ -1,9 +1,13 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 
-const Delete = () => {
+const Delete = ({ setFirstNumber, firstNumber }) => {
   return (
-    <Button variant="secondary" className="calc-btn delete">
+    <Button
+      variant="secondary"
+      className="calc-btn delete"
+      onClick={() => setFirstNumber(firstNumber.toString().slice(0, -1))}
+    >
       DEL
     </Button>
   );

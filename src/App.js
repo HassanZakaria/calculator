@@ -18,8 +18,8 @@ function App() {
     <div className="app">
       <div className="calculator">
         <OutPutScreen firstNumber={firstNumber} />
-        <Clear />
-        <Delete />
+        <Clear setFirstNumber={setFirstNumber} />
+        <Delete firstNumber={firstNumber} setFirstNumber={setFirstNumber} />
         <Divide />
         <Numbers
           number={7}
