@@ -9,28 +9,71 @@ import Multiply from "./Components/Multiply";
 import Numbers from "./Components/Numbers";
 import OutPutScreen from "./Components/OutputScreen";
 import Subtract from "./Components/Subtract";
+import { useState } from "react";
 
 function App() {
+  const [firstNumber, setFirstNumber] = useState(0);
+
   return (
     <div className="app">
       <div className="calculator">
-        <OutPutScreen />
+        <OutPutScreen firstNumber={firstNumber} />
         <Clear />
         <Delete />
         <Divide />
-        <Numbers number={7} />
-        <Numbers number={8} />
-        <Numbers number={9} />
+        <Numbers
+          number={7}
+          firstNumber={firstNumber}
+          setFirstNumber={setFirstNumber}
+        />
+        <Numbers
+          number={8}
+          firstNumber={firstNumber}
+          setFirstNumber={setFirstNumber}
+        />
+        <Numbers
+          number={9}
+          firstNumber={firstNumber}
+          setFirstNumber={setFirstNumber}
+        />
         <Multiply />
-        <Numbers number={4} />
-        <Numbers number={5} />
-        <Numbers number={6} />
+        <Numbers
+          number={4}
+          firstNumber={firstNumber}
+          setFirstNumber={setFirstNumber}
+        />
+        <Numbers
+          number={5}
+          firstNumber={firstNumber}
+          setFirstNumber={setFirstNumber}
+        />
+        <Numbers
+          number={6}
+          firstNumber={firstNumber}
+          setFirstNumber={setFirstNumber}
+        />
         <Subtract />
-        <Numbers number={1} />
-        <Numbers number={2} />
-        <Numbers number={3} />
+        <Numbers
+          number={1}
+          firstNumber={firstNumber}
+          setFirstNumber={setFirstNumber}
+        />
+        <Numbers
+          number={2}
+          firstNumber={firstNumber}
+          setFirstNumber={setFirstNumber}
+        />
+        <Numbers
+          number={3}
+          firstNumber={firstNumber}
+          setFirstNumber={setFirstNumber}
+        />
         <Add />
-        <Numbers number={0} />
+        <Numbers
+          number={0}
+          firstNumber={firstNumber}
+          setFirstNumber={setFirstNumber}
+        />
         <Equal />
       </div>
     </div>

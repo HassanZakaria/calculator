@@ -1,6 +1,6 @@
 import React from "react";
 
-const OutPutScreen = () => {
-  return <div className="calc-output">0</div>;
+const OutPutScreen = ({ firstNumber }) => {
+  return <div className="calc-output">{firstNumber}</div>;
 };
 export default OutPutScreen;
