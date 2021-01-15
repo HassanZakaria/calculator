@@ -13,7 +13,7 @@ import { useState } from "react";
 
 function App() {
   const [firstNumber, setFirstNumber] = useState(0);
-  const [opertor, setOperator] = useState("");
+  const [operator, setOperator] = useState("");
   const [secondNumber, setSecondNumber] = useState(0);
 
   const handleOperationButtonsClick = (operation) => {
@@ -82,7 +82,12 @@ function App() {
           firstNumber={firstNumber}
           setFirstNumber={setFirstNumber}
         />
-        <Equal />
+        <Equal
+          firstNumber={firstNumber}
+          setFirstNumber={setFirstNumber}
+          operator={operator}
+          secondNumber={secondNumber}
+        />
       </div>
     </div>
   );
