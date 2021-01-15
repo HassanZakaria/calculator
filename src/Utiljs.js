@@ -24,3 +24,18 @@ export function getClassNameFromNumber(num) {
       console.error("error occurred! Unknown number");
   }
 }
+
+export function getClassNameFromOperation(operation) {
+  switch (operation) {
+    case "+":
+      return "add";
+    case "-":
+      return "subtract";
+    case "x":
+      return "multiply";
+    case "÷":
+      return "divide";
+    default:
+      console.error("error occured! Unknown operator");
+  }
+}

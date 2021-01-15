@@ -19,7 +19,7 @@ const Equal = ({ setFirstNumber, firstNumber, operator, secondNumber }) => {
   return (
     <Button
       variant="warning"
-      className="calc-btn equal"
+      className="equal"
       onClick={() => setFirstNumber(chooseOperator(operator))}
     >
       =
