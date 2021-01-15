@@ -7,7 +7,7 @@ const Numbers = ({ number, setFirstNumber, firstNumber }) => {
     <Button
       variant="primary"
       className={getClassNameFromNumber(number)}
-      onClick={() => setFirstNumber([firstNumber + number])}
+      onClick={() => setFirstNumber((firstNumber + number).toString())}
     >
       {number}
     </Button>

@@ -13,6 +13,14 @@ import { useState } from "react";
 
 function App() {
   const [firstNumber, setFirstNumber] = useState(0);
+  const [opertor, setOperator] = useState("");
+  const [secondNumber, setSecondNumber] = useState(0);
+
+  const handleOperationButtonsClick = (operation) => {
+    setSecondNumber(firstNumber);
+    setOperator(operation);
+    setFirstNumber(0);
+  };
 
   return (
     <div className="app">
@@ -20,7 +28,7 @@ function App() {
         <OutPutScreen firstNumber={firstNumber} />
         <Clear setFirstNumber={setFirstNumber} />
         <Delete firstNumber={firstNumber} setFirstNumber={setFirstNumber} />
-        <Divide />
+        <Divide handleOperationButtonsClick={handleOperationButtonsClick} />
         <Numbers
           number={7}
           firstNumber={firstNumber}
@@ -36,7 +44,7 @@ function App() {
           firstNumber={firstNumber}
           setFirstNumber={setFirstNumber}
         />
-        <Multiply />
+        <Multiply handleOperationButtonsClick={handleOperationButtonsClick} />
         <Numbers
           number={4}
           firstNumber={firstNumber}
@@ -52,7 +60,7 @@ function App() {
           firstNumber={firstNumber}
           setFirstNumber={setFirstNumber}
         />
-        <Subtract />
+        <Subtract handleOperationButtonsClick={handleOperationButtonsClick} />
         <Numbers
           number={1}
           firstNumber={firstNumber}
@@ -68,7 +76,7 @@ function App() {
           firstNumber={firstNumber}
           setFirstNumber={setFirstNumber}
         />
-        <Add />
+        <Add handleOperationButtonsClick={handleOperationButtonsClick} />
         <Numbers
           number={0}
           firstNumber={firstNumber}

@@ -1,9 +1,13 @@
 import Button from "react-bootstrap/Button";
 import React from "react";
 
-const Subtract = () => {
+const Subtract = ({ handleOperationButtonsClick }) => {
   return (
-    <Button variant="warning" className="calc-btn subtract">
+    <Button
+      variant="warning"
+      className="calc-btn subtract"
+      onClick={() => handleOperationButtonsClick("-")}
+    >
       -
     </Button>
   );
