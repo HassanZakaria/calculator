@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import { getClassNameFromNumber } from "../Utiljs";
 
-const Numbers = ({ number, setFirstNumber, firstNumber }) => {
+const NumberButton = ({ number, setFirstNumber, firstNumber }) => {
   return (
     <Button
       variant="primary"
@@ -13,4 +13,4 @@ const Numbers = ({ number, setFirstNumber, firstNumber }) => {
     </Button>
   );
 };
-export default Numbers;
+export default NumberButton;

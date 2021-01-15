@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 
-const Clear = ({ setFirstNumber }) => {
+const ClearButton = ({ setFirstNumber }) => {
   return (
     <Button
       variant="danger"
@@ -12,4 +12,4 @@ const Clear = ({ setFirstNumber }) => {
     </Button>
   );
 };
-export default Clear;
+export default ClearButton;

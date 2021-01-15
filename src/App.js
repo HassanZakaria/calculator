@@ -1,9 +1,9 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Clear from "./Components/Clear";
-import Delete from "./Components/Delete";
-import Equal from "./Components/Equal";
-import Numbers from "./Components/Numbers";
+import ClearButton from "./Components/ClearButton";
+import DeleteButton from "./Components/DeleteButton";
+import EqualButton from "./Components/EqualButton";
+import NumberButton from "./Components/NumberButton";
 import OutPutScreen from "./Components/OutputScreen";
 import { useState } from "react";
 import OperationButton from "./Components/OperationButton";
@@ -24,8 +24,11 @@ function App() {
     <div className="app">
       <div className="calculator">
         <OutPutScreen firstNumber={firstNumber} />
-        <Clear setFirstNumber={setFirstNumber} />
-        <Delete firstNumber={firstNumber} setFirstNumber={setFirstNumber} />
+        <ClearButton setFirstNumber={setFirstNumber} />
+        <DeleteButton
+          firstNumber={firstNumber}
+          setFirstNumber={setFirstNumber}
+        />
         {operations.map((operation, index) => (
           <OperationButton
             key={index}
@@ -34,14 +37,14 @@ function App() {
           />
         ))}
         {numbers.map((number, index) => (
-          <Numbers
+          <NumberButton
             key={index}
             number={number}
             firstNumber={firstNumber}
             setFirstNumber={setFirstNumber}
           />
         ))}
-        <Equal
+        <EqualButton
           firstNumber={firstNumber}
           setFirstNumber={setFirstNumber}
           operator={operator}

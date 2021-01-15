@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 
-const Delete = ({ setFirstNumber, firstNumber }) => {
+const DeleteButton = ({ setFirstNumber, firstNumber }) => {
   return (
     <Button
       variant="secondary"
@@ -12,4 +12,4 @@ const Delete = ({ setFirstNumber, firstNumber }) => {
     </Button>
   );
 };
-export default Delete;
+export default DeleteButton;

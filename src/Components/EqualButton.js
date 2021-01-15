@@ -1,7 +1,12 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 
-const Equal = ({ setFirstNumber, firstNumber, operator, secondNumber }) => {
+const EqualButton = ({
+  setFirstNumber,
+  firstNumber,
+  operator,
+  secondNumber,
+}) => {
   function chooseOperator(operator) {
     switch (operator) {
       case "+":
@@ -26,4 +31,4 @@ const Equal = ({ setFirstNumber, firstNumber, operator, secondNumber }) => {
     </Button>
   );
 };
-export default Equal;
+export default EqualButton;
