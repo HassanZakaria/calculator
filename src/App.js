@@ -21,6 +21,7 @@ function App() {
     setOperator(operation);
     setFirstNumber(0);
   };
+  const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   return (
     <div className="app">
       <div className="calculator">
@@ -28,53 +29,15 @@ function App() {
         <Clear setFirstNumber={setFirstNumber} />
         <Delete firstNumber={firstNumber} setFirstNumber={setFirstNumber} />
         <Divide handleOperationButtonsClick={handleOperationButtonsClick} />
-        <Numbers
-          number={7}
-          firstNumber={firstNumber}
-          setFirstNumber={setFirstNumber}
-        />
-        <Numbers
-          number={8}
-          firstNumber={firstNumber}
-          setFirstNumber={setFirstNumber}
-        />
-        <Numbers
-          number={9}
-          firstNumber={firstNumber}
-          setFirstNumber={setFirstNumber}
-        />
+        {numbers.map((number) => (
+          <Numbers
+            number={number}
+            firstNumber={firstNumber}
+            setFirstNumber={setFirstNumber}
+          />
+        ))}
         <Multiply handleOperationButtonsClick={handleOperationButtonsClick} />
-        <Numbers
-          number={4}
-          firstNumber={firstNumber}
-          setFirstNumber={setFirstNumber}
-        />
-        <Numbers
-          number={5}
-          firstNumber={firstNumber}
-          setFirstNumber={setFirstNumber}
-        />
-        <Numbers
-          number={6}
-          firstNumber={firstNumber}
-          setFirstNumber={setFirstNumber}
-        />
         <Subtract handleOperationButtonsClick={handleOperationButtonsClick} />
-        <Numbers
-          number={1}
-          firstNumber={firstNumber}
-          setFirstNumber={setFirstNumber}
-        />
-        <Numbers
-          number={2}
-          firstNumber={firstNumber}
-          setFirstNumber={setFirstNumber}
-        />
-        <Numbers
-          number={3}
-          firstNumber={firstNumber}
-          setFirstNumber={setFirstNumber}
-        />
         <Add handleOperationButtonsClick={handleOperationButtonsClick} />
         <Numbers
           number={0}
