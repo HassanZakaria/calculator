@@ -19,7 +19,8 @@ function App() {
     setFirstNumber(0);
   };
   const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-  const operations = ["÷", "x", "-", "+"];
+  const operators = ["÷", "x", "-", "+"];
+
   return (
     <div className="app">
       <div className="calculator">
@@ -29,10 +30,10 @@ function App() {
           firstNumber={firstNumber}
           setFirstNumber={setFirstNumber}
         />
-        {operations.map((operation, index) => (
+        {operators.map((operator, index) => (
           <OperationButton
             key={index}
-            operations={operation}
+            operations={operator}
             handleOperationButtonsClick={handleOperationButtonsClick}
           />
         ))}

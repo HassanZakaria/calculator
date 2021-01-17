@@ -13,9 +13,9 @@ const EqualButton = ({
         return parseFloat(firstNumber) + parseFloat(secondNumber);
       case "-":
         return parseFloat(secondNumber) - parseFloat(firstNumber);
-      case "*":
+      case "x":
         return parseFloat(firstNumber) * parseFloat(secondNumber);
-      case "/":
+      case "÷":
         return parseFloat(secondNumber) / parseFloat(firstNumber);
       default:
         console.error("no operator clicked!");

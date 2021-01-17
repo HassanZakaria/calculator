@@ -7,7 +7,7 @@ const OperationButton = ({ handleOperationButtonsClick, operations }) => {
     <Button
       variant="warning"
       className={getClassNameFromOperation(operations)}
-      onClick={() => handleOperationButtonsClick({ operations })}
+      onClick={() => handleOperationButtonsClick(operations)}
     >
       {operations}
     </Button>
