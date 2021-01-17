@@ -7,7 +7,13 @@ const NumberButton = ({ number, setFirstNumber, firstNumber }) => {
     <Button
       variant="primary"
       className={getClassNameFromNumber(number)}
-      onClick={() => setFirstNumber((firstNumber + number).toString())}
+      onClick={() =>
+        setFirstNumber(
+          number === 0 && firstNumber === 0
+            ? 0
+            : (firstNumber + number).toString()
+        )
+      }
     >
       {number}
     </Button>
