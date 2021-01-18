@@ -1,6 +1,6 @@
 .app {
-  width: 40vw;
-  margin: 10vw auto;
+  width: 25vw;
+  margin: 15vh auto;
 }
 
 .calc-output {
@@ -17,7 +17,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 10px 15px;
+  gap: 10px 10px;
   grid-template-areas:
     "display display display display"
     "clear clear delete divide"
@@ -25,7 +25,7 @@
     "four five six subtract"
     "one two three add"
     "zero zero equal equal";
-  align-items: start;
+  align-items: center;
 }
 .clear {
   grid-area: clear;
@@ -93,4 +93,40 @@
 
 .equal {
   grid-area: equal;
+}
+@media (max-width: 1200px) and (min-width: 768px) {
+  .app {
+    width: 35vw;
+    margin: 15vh auto;
+  }
+}
+@media (max-width: 768px) and (min-width: 540px) {
+  .app {
+    width: 45vw;
+    margin: 15vh auto;
+  }
+}
+@media (max-width: 540px) and (min-width: 400px) {
+  .app {
+    width: 60vw;
+    margin: 15vh auto;
+  }
+}
+@media (max-width: 400px) and (min-width: 320px) {
+  .app {
+    width: 75vw;
+    margin: 15vh auto;
+  }
+}
+@media (max-width: 320px) and (min-width: 260px) {
+  .app {
+    width: 85vw;
+    margin: 15vh auto;
+  }
+}
+@media (max-width: 260px) and (min-width: 200px) {
+  .app {
+    width: 100vw;
+    margin: 15vh auto;
+  }
 }
