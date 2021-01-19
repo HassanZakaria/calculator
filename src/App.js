@@ -4,7 +4,7 @@ import ClearButton from "./Components/ClearButton";
 import DeleteButton from "./Components/DeleteButton";
 import EqualButton from "./Components/EqualButton";
 import NumberButton from "./Components/NumberButton";
-import OutPutScreen from "./Components/OutputScreen";
+import OutputScreen from "./Components/OutputScreen";
 import { useState } from "react";
 import OperationButton from "./Components/OperationButton";
 
@@ -12,24 +12,23 @@ function App() {
   const [firstNumber, setFirstNumber] = useState(0);
   const [operator, setOperator] = useState("");
   const [secondNumber, setSecondNumber] = useState(0);
+  const [output, setOutput] = useState("");
 
   const handleOperationButtonsClick = (operation) => {
-    setSecondNumber(firstNumber);
+    setSecondNumber(output);
     setOperator(operation);
-    setFirstNumber(0);
+    setOutput("");
   };
+
   const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   const operators = ["÷", "x", "-", "+"];
 
   return (
     <div className="app">
       <div className="calculator">
-        <OutPutScreen firstNumber={firstNumber} />
-        <ClearButton setFirstNumber={setFirstNumber} />
-        <DeleteButton
-          firstNumber={firstNumber}
-          setFirstNumber={setFirstNumber}
-        />
+        <OutputScreen firstNumber={firstNumber} output={output} />
+        <ClearButton setOutput={setOutput} />
+        <DeleteButton output={output} setOutput={setOutput} />
         {operators.map((operator, index) => (
           <OperationButton
             key={index}
@@ -41,15 +40,19 @@ function App() {
           <NumberButton
             key={index}
             number={number}
-            firstNumber={firstNumber}
+            setOutput={setOutput}
+            output={output}
             setFirstNumber={setFirstNumber}
+            firstNumber={firstNumber}
           />
         ))}
         <EqualButton
           firstNumber={firstNumber}
-          setFirstNumber={setFirstNumber}
+          setOutput={setOutput}
           operator={operator}
           secondNumber={secondNumber}
+          setFirstNumber={setFirstNumber}
+          setSecondNumber={setSecondNumber}
         />
       </div>
     </div>
