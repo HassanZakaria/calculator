@@ -16,13 +16,13 @@ const NumberButton = ({
       onClick={() => {
         setOutput(
           output
-            ? parseInt(firstNumber.toString() + number.toString())
-            : parseInt(output + number.toString())
+            ? parseFloat(firstNumber.toString() + number.toString()).toString()
+            : parseFloat(output + number.toString()).toString()
         );
         setFirstNumber(
           !firstNumber
-            ? parseInt(firstNumber.toString() + number.toString())
-            : parseInt(output + number.toString())
+            ? parseFloat(firstNumber.toString() + number.toString())
+            : parseFloat(output + number.toString())
         );
       }}
     >

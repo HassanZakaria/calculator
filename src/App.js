@@ -7,6 +7,7 @@ import NumberButton from "./Components/NumberButton";
 import OutputScreen from "./Components/OutputScreen";
 import { useState } from "react";
 import OperationButton from "./Components/OperationButton";
+import Decimal from "./Components/Decimal";
 
 function App() {
   const [firstNumber, setFirstNumber] = useState(0);
@@ -26,7 +27,7 @@ function App() {
   return (
     <div className="app">
       <div className="calculator">
-        <OutputScreen firstNumber={firstNumber} output={output} />
+        <OutputScreen output={output} secondNumber={secondNumber} />
         <ClearButton setOutput={setOutput} />
         <DeleteButton output={output} setOutput={setOutput} />
         {operators.map((operator, index) => (
@@ -46,6 +47,11 @@ function App() {
             firstNumber={firstNumber}
           />
         ))}
+        <Decimal
+          setOutput={setOutput}
+          output={output}
+          setFirstNumber={setFirstNumber}
+        />
         <EqualButton
           firstNumber={firstNumber}
           setOutput={setOutput}
@@ -53,6 +59,8 @@ function App() {
           secondNumber={secondNumber}
           setFirstNumber={setFirstNumber}
           setSecondNumber={setSecondNumber}
+          output={output}
+          setOperator={setOperator}
         />
       </div>
     </div>

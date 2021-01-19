@@ -1,6 +1,10 @@
 import React from "react";
 
-const OutputScreen = ({ firstNumber, output }) => {
-  return <div className="calc-output">{output || 0}</div>;
+const OutputScreen = ({ output, secondNumber }) => {
+  return (
+    <div className="calc-output">
+      {output ? output || 0 : secondNumber || 0}
+    </div>
+  );
 };
 export default OutputScreen;

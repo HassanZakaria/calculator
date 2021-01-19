@@ -9,6 +9,7 @@ const EqualButton = ({
   setFirstNumber,
   setSecondNumber,
   output,
+  setOperator,
 }) => {
   function chooseOperator(operator) {
     switch (operator) {
@@ -21,7 +22,7 @@ const EqualButton = ({
       case "÷":
         return parseFloat(secondNumber) / parseFloat(firstNumber);
       default:
-        console.error("no operator clicked!");
+        return output;
     }
   }
   return (
@@ -29,9 +30,10 @@ const EqualButton = ({
       variant="warning"
       className="equal"
       onClick={() => {
-        setOutput(chooseOperator(operator).toString());
+        setOutput(chooseOperator(operator));
         setSecondNumber(0);
         setFirstNumber(0);
+        setOperator("");
       }}
     >
       =
