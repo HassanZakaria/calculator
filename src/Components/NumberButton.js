@@ -2,18 +2,29 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import { getClassNameFromNumber } from "../Utiljs";
 
-const NumberButton = ({ number, setFirstNumber, firstNumber }) => {
+const NumberButton = ({
+  number,
+  setOutput,
+  output,
+  setFirstNumber,
+  firstNumber,
+}) => {
   return (
     <Button
       variant="primary"
       className={getClassNameFromNumber(number)}
-      onClick={() =>
+      onClick={() => {
+        setOutput(
+          output
+            ? parseFloat(output + number).toString()
+            : parseFloat(output + number).toString()
+        );
         setFirstNumber(
-          number === 0 && firstNumber === 0
-            ? 0
-            : (firstNumber + number).toString()
-        )
-      }
+          !firstNumber
+            ? parseFloat(output + number).toString()
+            : parseFloat(output + number).toString()
+        );
+      }}
     >
       {number}
     </Button>

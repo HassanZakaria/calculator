@@ -2,10 +2,14 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 
 const EqualButton = ({
-  setFirstNumber,
+  setOutput,
   firstNumber,
   operator,
   secondNumber,
+  setFirstNumber,
+  setSecondNumber,
+  output,
+  setOperator,
 }) => {
   function chooseOperator(operator) {
     switch (operator) {
@@ -18,14 +22,19 @@ const EqualButton = ({
       case "÷":
         return parseFloat(secondNumber) / parseFloat(firstNumber);
       default:
-        console.error("no operator clicked!");
+        return output;
     }
   }
   return (
     <Button
       variant="warning"
       className="equal"
-      onClick={() => setFirstNumber(chooseOperator(operator))}
+      onClick={() => {
+        setOutput(chooseOperator(operator).toString());
+        setSecondNumber(0);
+        setFirstNumber(0);
+        setOperator("");
+      }}
     >
       =
     </Button>

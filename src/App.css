@@ -24,7 +24,7 @@
     "seven eight nine multiply"
     "four five six subtract"
     "one two three add"
-    "zero zero equal equal";
+    "zero dot equal equal";
   align-items: center;
 }
 .clear {
@@ -93,6 +93,9 @@
 
 .equal {
   grid-area: equal;
+}
+.dot {
+  grid-area: dot;
 }
 @media (max-width: 1200px) and (min-width: 768px) {
   .app {
