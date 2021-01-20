@@ -30,7 +30,7 @@ const EqualButton = ({
       variant="warning"
       className="equal"
       onClick={() => {
-        setOutput(chooseOperator(operator));
+        setOutput(chooseOperator(operator).toString());
         setSecondNumber(0);
         setFirstNumber(0);
         setOperator("");
