@@ -19,9 +19,7 @@ function App() {
   const handleOperationButtonsClick = (operation) => {
     if (operator) {
       setOutput(chooseOperator(operator, firstNumber, secondNumber));
-      setFirstNumber(
-        chooseOperator(operator, firstNumber, secondNumber).toString()
-      );
+      setFirstNumber(chooseOperator(operator, firstNumber, secondNumber));
       setSecondNumber(0);
       setOperator(operation);
     } else {
