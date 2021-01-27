@@ -39,3 +39,17 @@ export function getClassNameFromOperation(operation) {
       console.error("error occured! Unknown operator");
   }
 }
+export function chooseOperator(operator, firstNumber, secondNumber) {
+  switch (operator) {
+    case "+":
+      return parseFloat(firstNumber) + parseFloat(secondNumber);
+    case "-":
+      return parseFloat(firstNumber) - parseFloat(secondNumber);
+    case "x":
+      return parseFloat(firstNumber) * parseFloat(secondNumber);
+    case "÷":
+      return parseFloat(firstNumber) / parseFloat(secondNumber);
+    default:
+      return console.error("error");
+  }
+}

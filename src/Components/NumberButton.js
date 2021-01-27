@@ -6,23 +6,18 @@ const NumberButton = ({
   number,
   setOutput,
   output,
-  setFirstNumber,
+  setSecondNumber,
   firstNumber,
+  secondNumber,
 }) => {
   return (
     <Button
       variant="primary"
       className={getClassNameFromNumber(number)}
       onClick={() => {
-        setOutput(
-          output
-            ? parseFloat(output + number).toString()
-            : parseFloat(output + number).toString()
-        );
-        setFirstNumber(
-          !firstNumber
-            ? parseFloat(output + number).toString()
-            : parseFloat(output + number).toString()
+        setOutput(firstNumber ? 0 : parseFloat(output + number).toString());
+        setSecondNumber(
+          !firstNumber ? 0 : parseFloat(secondNumber + number).toString()
         );
       }}
     >
