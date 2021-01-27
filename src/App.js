@@ -8,6 +8,7 @@ import OutputScreen from "./Components/OutputScreen";
 import { useState } from "react";
 import OperationButton from "./Components/OperationButton";
 import Decimal from "./Components/Decimal";
+import { chooseOperator } from "./Utiljs";
 
 function App() {
   const [firstNumber, setFirstNumber] = useState(0);
@@ -16,9 +17,18 @@ function App() {
   const [output, setOutput] = useState("");
 
   const handleOperationButtonsClick = (operation) => {
-    setSecondNumber(output);
-    setOperator(operation);
-    setOutput("");
+    if (operator) {
+      setOutput(chooseOperator(operator, firstNumber, secondNumber));
+      setFirstNumber(
+        chooseOperator(operator, firstNumber, secondNumber).toString()
+      );
+      setSecondNumber(0);
+      setOperator(operation);
+    } else {
+      setFirstNumber(output);
+      setOperator(operation);
+      setOutput("");
+    }
   };
 
   const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -27,7 +37,11 @@ function App() {
   return (
     <div className="app">
       <div className="calculator">
-        <OutputScreen output={output} secondNumber={secondNumber} />
+        <OutputScreen
+          output={output}
+          firstNumber={firstNumber}
+          secondNumber={secondNumber}
+        />
         <ClearButton setOutput={setOutput} />
         <DeleteButton output={output} setOutput={setOutput} />
         {operators.map((operator, index) => (
@@ -43,8 +57,9 @@ function App() {
             number={number}
             setOutput={setOutput}
             output={output}
-            setFirstNumber={setFirstNumber}
+            setSecondNumber={setSecondNumber}
             firstNumber={firstNumber}
+            secondNumber={secondNumber}
           />
         ))}
         <Decimal
