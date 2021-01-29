@@ -15,7 +15,7 @@ const NumberButton = ({
       variant="primary"
       className={getClassNameFromNumber(number)}
       onClick={() => {
-        setOutput(firstNumber ? 0 : parseFloat(output + number).toString());
+        setOutput(firstNumber ? "" : parseFloat(output + number).toString());
         setSecondNumber(
           !firstNumber ? 0 : parseFloat(secondNumber + number).toString()
         );
