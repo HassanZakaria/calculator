@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
-import { chooseOperator } from "../Utiljs";
+import { performOperation } from "../Utiljs";
 
 const EqualButton = ({
   setOutput,
@@ -17,7 +17,7 @@ const EqualButton = ({
       className="equal"
       onClick={() => {
         setOutput(
-          chooseOperator(operator, firstNumber, secondNumber).toString()
+          performOperation(operator, firstNumber, secondNumber).toString()
         );
         setSecondNumber(0);
         setFirstNumber(0);
