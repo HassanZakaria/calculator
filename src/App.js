@@ -56,9 +56,7 @@ function App() {
         <DeleteButton
           output={output}
           setOutput={setOutput}
-          firstNumber={firstNumber}
           secondNumber={secondNumber}
-          setFirstNumber={setFirstNumber}
           setSecondNumber={setSecondNumber}
         />
         {operators.map((operator, index) => (
