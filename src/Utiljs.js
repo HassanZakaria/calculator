@@ -36,7 +36,7 @@ export function getClassNameFromOperation(operation) {
     case "÷":
       return "divide";
     default:
-      console.error("error occured! Unknown operator");
+      console.error("error occured! Unknown operation");
   }
 }
 export function performOperation(operator, firstNumber, secondNumber) {
@@ -50,6 +50,6 @@ export function performOperation(operator, firstNumber, secondNumber) {
     case "÷":
       return parseFloat(firstNumber) / parseFloat(secondNumber);
     default:
-      return console.error("error");
+      return console.error("error occured! Unknown operator");
   }
 }

@@ -2,14 +2,14 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import { getClassNameFromOperation } from "../Utiljs";
 
-const OperationButton = ({ handleOperationButtonsClick, operations }) => {
+const OperationButton = ({ handleOperationButtonsClick, operation }) => {
   return (
     <Button
       variant="warning"
-      className={getClassNameFromOperation(operations)}
-      onClick={() => handleOperationButtonsClick(operations)}
+      className={getClassNameFromOperation(operation)}
+      onClick={handleOperationButtonsClick}
     >
-      {operations}
+      {operation}
     </Button>
   );
 };

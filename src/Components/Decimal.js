@@ -14,7 +14,7 @@ const Decimal = ({ setOutput, output, setSecondNumber, secondNumber }) => {
     }
   }
   return (
-    <Button variant="primary" className="dot" onClick={() => decimal()}>
+    <Button variant="primary" className="dot" onClick={decimal}>
       .
     </Button>
   );

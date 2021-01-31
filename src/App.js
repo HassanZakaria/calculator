@@ -16,20 +16,27 @@ function App() {
   const [secondNumber, setSecondNumber] = useState(0);
   const [output, setOutput] = useState("");
 
-  const handleOperationButtonsClick = (operation) => {
-    const operationResult = performOperation(
-      operator,
-      firstNumber,
-      secondNumber
-    );
+  function init() {
+    setFirstNumber(0);
+    setOperator("");
+    setSecondNumber(0);
+    setOutput("");
+  }
+
+  const handleOperationButtonsClick = (e) => {
     if (operator) {
-      setOutput(operationResult());
-      setFirstNumber(operationResult());
+      const operationResult = performOperation(
+        operator,
+        firstNumber,
+        secondNumber
+      );
+      setOutput(operationResult || "");
+      setFirstNumber(operationResult || 0);
       setSecondNumber(0);
-      setOperator(operation);
+      setOperator(e.target.textContent);
     } else {
       setFirstNumber(output);
-      setOperator(operation);
+      setOperator(e.target.textContent);
       setOutput("");
     }
   };
@@ -45,12 +52,7 @@ function App() {
           firstNumber={firstNumber}
           secondNumber={secondNumber}
         />
-        <ClearButton
-          setOutput={setOutput}
-          setSecondNumber={setSecondNumber}
-          setFirstNumber={setFirstNumber}
-          setOperator={setOperator}
-        />
+        <ClearButton init={init} />
         <DeleteButton
           output={output}
           setOutput={setOutput}
@@ -62,7 +64,7 @@ function App() {
         {operators.map((operator, index) => (
           <OperationButton
             key={index}
-            operations={operator}
+            operation={operator}
             handleOperationButtonsClick={handleOperationButtonsClick}
           />
         ))}
