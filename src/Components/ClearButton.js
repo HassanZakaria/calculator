@@ -1,20 +1,9 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 
-const ClearButton = ({
-  setOutput,
-  setFirstNumber,
-  setSecondNumber,
-  setOperator,
-}) => {
-  function clear() {
-    setOutput("");
-    setFirstNumber(0);
-    setSecondNumber(0);
-    setOperator("");
-  }
+const ClearButton = ({ init }) => {
   return (
-    <Button variant="danger" className="calc-btn clear" onClick={() => clear()}>
+    <Button variant="danger" className="calc-btn clear" onClick={init}>
       AC
     </Button>
   );

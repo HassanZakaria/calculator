@@ -5,11 +5,11 @@ const OutputScreen = ({ output, firstNumber, secondNumber }) => {
     if (output) {
       return output;
     } else if (!output && firstNumber) {
-      return secondNumber || 0;
+      return secondNumber;
     } else {
       return firstNumber;
     }
   }
-  return <div className="calc-output">{display()}</div>;
+  return <div className="calc-output">{display() || 0}</div>;
 };
 export default OutputScreen;
